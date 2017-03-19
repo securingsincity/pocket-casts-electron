@@ -1,5 +1,5 @@
 # Pocket Casts Electron
-Electron version of Pocket Casts with TouchBar Support
+Electron version of Pocket Casts with Play/Pause button support and TouchBar Support
 
 ![](https://raw.githubusercontent.com/securingsincity/pocket-casts-electron/master/images/screenshot.png)
 
