@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pocket Casts</title>
+        <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        #pocket {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="indicator"></div>
+    <webview id="pocket" src="http://play.pocketcasts.com/web" disablewebsecurity></webview>
+    <script>
+      const {ipcRenderer} = require('electron')
+      ipcRenderer.on('play-pause', (event, arg) => {
+        const webview = document.querySelector('webview')
+        webview.executeJavaScript("$('.play_pause_button')[0].click()");;
+      })
+
+      ipcRenderer.on('forward', (event, arg) => {
+        const webview = document.querySelector('webview')
+        webview.executeJavaScript("$('.skip_forward_button')[0].click()");;
+      })
+
+      ipcRenderer.on('backward', (event, arg) => {
+        const webview = document.querySelector('webview')
+        webview.executeJavaScript("$('.skip_back_button')[0].click()");;
+      })
+
+    </script>
+  </body>
+</html>
